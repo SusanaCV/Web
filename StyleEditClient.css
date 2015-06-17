@@ -1,0 +1,39 @@
+#menu{
+ background:#FFCCFF;
+ border:solid 3px #ff6699;
+ border-radius:3px;
+ width:1850px;
+ padding:25px;
+ }
+menu{
+ color:#FF0099;
+ display:inline-block;
+ margin:20px;
+ border: dashed 2px #ff9999;;
+ border-radius:5px;
+ width:100px;
+ margin-left: 350px;
+ padding:5px;
+ }
+menu:hover{
+ border-radius:3px;
+ border: dashed 2px #ff9999;;
+ color:#FF0099;
+ }
+.img3{
+	position:absolute;
+	width: 100px;
+	top:16%;
+	left:99%;
+	margin-left:-105px;
+	margin-top:-130px;
+	padding:5px}
+	
+.h3{
+	position:absolute;
+	color: #FF33CC;
+	top:1.5%;
+	left:95%;
+	margin-left:-150px;
+	margin-top:50px;
+	padding:5px}
