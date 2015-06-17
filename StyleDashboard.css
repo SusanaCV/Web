@@ -17,8 +17,8 @@ menu{
  }
 menu:hover{
  border-radius:3px;
- border:solid 1px #333;
- color:red;
+ border: dashed 2px #ff9999;;
+ color:#FF0099;
  }
 .img{
 	position:absolute;
@@ -29,8 +29,9 @@ menu:hover{
 	padding:5px}
 .img1{
 	position:absolute;
-	top:50%;
+	top:51%;
 	left:48%;
+	width: 210px;
 	margin-left:-105px;
 	margin-top:-130px;
 	padding:5px}
