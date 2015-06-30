@@ -171,3 +171,15 @@ menu:hover{
 	font-weight:900;
 	margin:0 0;
 	padding:7px 20px}
+
+	.imgEdit{
+	position:absolute;
+	width: 130px;
+	top:17%;
+	left:14%;
+	margin-left:-105px;
+}
+
+.color{
+	background: #FFB6C1;
+}
