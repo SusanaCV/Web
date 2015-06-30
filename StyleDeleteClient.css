@@ -23,8 +23,7 @@ menu:hover{
  .centrar{
 	position:absolute;
 	top:60%;
-	left:54%;
-
+	left:52%;
 	margin-left:-250px;
 	height:450px;
 	margin-top:-150px;
@@ -74,7 +73,7 @@ menu:hover{
 	margin-left:-105px;
 }
 p { 
-  font: oblique bold 120% cursive; 
+  font: oblique bold 140% cursive; 
 }
 .color{
 	background: #FFB6C1;
@@ -84,7 +83,7 @@ p {
  	border-radius:5px;
 	width: 7%;
 	top:60%;
-	left:45%;
+	left:43%;
 	font: oblique bold 100% Gadget;
 	color: #F5F5DC; 
 	background-color: red;
