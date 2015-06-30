@@ -28,14 +28,13 @@ menu:hover{
 	margin-left:-105px;
 	margin-top:-130px;
 	padding:5px}
-
-	.img1{
+.img1{
 	position:absolute;
 	margin-top:  -3px;
 	padding-left: 20px;
 	width: 30px;
 	}
-	.img2{
+.img2{
 	position:absolute;
 	width: 23px;
 	padding-left: 70px;
@@ -50,10 +49,11 @@ menu:hover{
 	margin-left:-150px;
 	margin-top:50px;
 	padding:5px}
-		.color{
+
+	.color{
 	background: #FFB6C1;
 }
-.imgClient{
+.imgChambas{
 	position:absolute;
 	width: 130px;
 	top:18%;
@@ -71,7 +71,7 @@ menu:hover{
 	margin-left:-60px;
 	margin-top:-20px;
 	padding:10px}
-.client{
+.chambas{
 	position:absolute;
 	top:22%;
 	left:20%;
@@ -89,24 +89,24 @@ menu:hover{
 	padding:5px;
 }
 .tabla {
-	font-family: Verdana;
-	font-size:16px;
-	text-align: left;
-	width: 1700px;
+font-family: Verdana;
+font-size:16px;
+text-align: left;
+width: 1700px;
 
 }
 .tabla th {
-	padding: 10px;
-	font-size: 16px;
-	background-color: #FFB6C1;
-	color: #FFFFFF;
-	font-family:  Arial;
-	text-transform: uppercase;
+padding: 9px;
+font-size: 16px;
+background-color: #FFB6C1;
+color: #FFFFFF;
+font-family:  Arial;
+text-transform: uppercase;
 }
 .tabla .modo1 {
-	font-size: 19px;
-	font-weight:bold;
-	font-family:  Arial;
-	padding: 5px;
-	text-align:left;
+font-size: 15px;
+font-weight:bold;
+font-family:  Arial;
+padding: 5px;
+text-align:left;
 }

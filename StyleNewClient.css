@@ -49,7 +49,7 @@ menu:hover{
 }
 .centrar{
 	position:absolute;
-	top:45%;
+	top:40%;
 	left:55%;
 	width:400px;
 	margin-left:-250px;
@@ -59,14 +59,6 @@ menu:hover{
 	border-radius:15px}
 
 .nombre{
-	width: 150%;
-	position:absolute;
-	top:33%;
-	left:-12%;
-	margin-left:-110px;
-	margin-top:0;
-	padding:5px}
-.apellido{
 	width: 150%;
 	position:absolute;
 	top:48%;
@@ -100,7 +92,7 @@ menu:hover{
 	margin-top:-20px;
 	padding:10px}
 
-	.BTN{
+.BTN{
 	position:absolute;
  	border-radius:12px;
 	width: 10%;
@@ -121,14 +113,6 @@ menu:hover{
 	margin-left:-60px;
 	margin-top:-20px;
 	padding:10px}
-					
-.t1{
-	position:absolute;
-	top:%;
-	left:-4%;
-	margin-left:-147px;
-	margin-top:100px;
-	padding:5px}
 .t2{
 	position:absolute;
 	top:16%;
@@ -151,7 +135,6 @@ menu:hover{
 	margin-left:-147px;
 	margin-top:210px;
 	padding:5px}
-           
 .New{
 	position:absolute;
 	top:22%;

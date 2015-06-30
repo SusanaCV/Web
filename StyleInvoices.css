@@ -28,6 +28,18 @@ menu:hover{
 	margin-left:-105px;
 	margin-top:-130px;
 	padding:5px}
+.img1{
+	position:absolute;
+	margin-top:  -3px;
+	padding-left: 20px;
+	width: 30px;
+	}
+.img2{
+	position:absolute;
+	width: 23px;
+	padding-left: 70px;
+	padding-top: -5px;
+	}
 	
 .h3{
 	position:absolute;
