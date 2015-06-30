@@ -1,0 +1,104 @@
+#menu{
+ background:#FFCCFF;
+ border:solid 3px #ff6699;
+ border-radius:3px;
+ width:1850px;
+ padding:25px;
+ }
+menu{
+ color:#FF0099;
+ display:inline-block;
+ margin:20px;
+ border: dashed 2px #ff9999;;
+ border-radius:5px;
+ width:100px;
+ margin-left: 350px;
+ padding:5px;
+ }
+menu:hover{
+ border-radius:3px;
+ border: dashed 2px #ff9999;;
+ color:#FF0099;
+ }
+ .centrar{
+	position:absolute;
+	top:60%;
+	left:52%;
+	margin-left:-250px;
+	height:450px;
+	margin-top:-150px;
+	padding:5px;
+	border-radius:15px}
+.img3{
+	position:absolute;
+	width: 100px;
+	top:16%;
+	left:99%;
+	margin-left:-105px;
+	margin-top:-130px;
+	padding:5px}
+.BTN{
+	position:absolute;
+ 	border-radius:12px;
+	width: 10%;
+	top:24%;
+	left:90%;
+	background-color: #ff9999;
+    color:#FF0099;
+	margin-left:-60px;
+	margin-top:-20px;
+	padding:10px}
+	
+.h3{
+	position:absolute;
+	color: #FF33CC;
+	top:1.5%;
+	left:95%;
+	margin-left:-150px;
+	margin-top:50px;
+	padding:5px}
+.delete{
+	position:absolute;
+	top:22%;
+	left:20%;
+	color:#ff9999;
+	margin-left:-50px;
+	margin-top:10px;
+	padding:5px}
+.imgDelete{
+	position:absolute;
+	width: 130px;
+	top:17%;
+	left:14%;
+	margin-left:-105px;
+}
+p { 
+  font: oblique bold 140% cursive; 
+}
+.color{
+	background: #FFB6C1;
+}
+.NO{
+	position:absolute;
+ 	border-radius:5px;
+	width: 7%;
+	top:60%;
+	left:43%;
+	font: oblique bold 100% Gadget;
+	color: #F5F5DC; 
+	background-color: red;
+	margin-left:-60px;
+	margin-top:-20px;
+	padding:10px}
+.YES{
+	position:absolute;
+ 	border-radius:5px;
+	width: 7%;
+	top:60%;
+	left:60%;
+	font: oblique bold 100% Gadget; 
+	color: #F5F5DC;
+	background-color: green;
+	margin-left:-60px;
+	margin-top:-20px;
+	padding:10px}
