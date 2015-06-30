@@ -3,7 +3,7 @@ html{background:#FF9966}
 	background:#FF6666;
 	position:absolute;
 	top:45%;
-	left:55%;
+	left:50%;
 	width:400px;
 	margin-left:-250px;
 	height:450px;
@@ -53,6 +53,7 @@ html{background:#FF9966}
 	div{
 	margin:40px auto;
 	width:8%}
+
     input{
 	background:#FFE4E1;
 	border:0;
