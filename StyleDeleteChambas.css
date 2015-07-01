@@ -81,9 +81,9 @@ p {
 .NO{
 	position:absolute;
  	border-radius:5px;
-	width: 7%;
-	top:60%;
-	left:43%;
+	width: 20%;
+	top:40%;
+	left:20%;
 	font: oblique bold 100% Gadget;
 	color: #F5F5DC; 
 	background-color: red;
@@ -93,12 +93,21 @@ p {
 .YES{
 	position:absolute;
  	border-radius:5px;
-	width: 7%;
-	top:60%;
-	left:60%;
+	width: 20%;
+	top:40%;
+	left:80%;
 	font: oblique bold 100% Gadget; 
 	color: #F5F5DC;
 	background-color: green;
 	margin-left:-60px;
 	margin-top:-20px;
 	padding:10px}
+	 input{
+	border:0;
+	border-radius:5px;
+	box-shadow:0 2px 0 rgba(0,0,0,.2);
+	color:#DA70D6;
+	font-style:italic;
+	font-weight:900;
+	margin:0 0;
+	padding:7px 20px}

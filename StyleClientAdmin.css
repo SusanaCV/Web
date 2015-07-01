@@ -60,6 +60,13 @@ menu:hover{
 	left:14%;
 	margin-left:-105px;
 }
+.imgAtras{
+	position:absolute;
+	width: 100px;
+	top:3%;
+	left:6%;
+	margin-left:-105px;
+}
 .BTN{
 	position:absolute;
  	border-radius:12px;
@@ -110,3 +117,12 @@ menu:hover{
 	padding: 5px;
 	text-align:left;
 }
+ input{
+	border:0;
+	border-radius:5px;
+	box-shadow:0 2px 0 rgba(0,0,0,.2);
+	color:#DA70D6;
+	font-style:italic;
+	font-weight:900;
+	margin:0 0;
+	padding:7px 20px}
