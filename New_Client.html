@@ -19,18 +19,19 @@
  <div class='centrar'>
             <form name="input"  action="Client2.html">
                 <h3 class = 't2'>Nombre Completo</h3>
-                <input class = 'nombre' type="text" name="nombre" value = "Carmen Vargas">
+                <input class = 'nombre' type="text" name="nombre" id="nombre" value="">
                 <br/>
                 <h3 class = 't3'>Cedula</h3>
-                <input class = 'cedula' type="text" name="cedula" value = "204060244">
+                <input class = 'cedula' type="text" name="cedula" id="cedula" value="">
                 <br/>
                 <h3 class = 't4'>Telefono</h3>
-                <input class = 'telefono' type="number" name="telefono" value = "85392556">
+                <input class = 'telefono' type="number" name="telefono" id="telefono" value="">
                 <br/>
-                 <input class = 'submit' type="submit" name="Save" value = "Save">
+                <input class = 'submit' type="submit" name="Save" value="Guardar Datos" onclick="CLIENT.saveClient();">
                 <br/>
                 <a class = 'cancel' href="Client_Administration.html">Cancel</a>
                 </form>
         </div>
+<script src="JavaScriptClients.js" type="text/javascript" ></script>        
 </body>
 </html>

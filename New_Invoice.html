@@ -5,6 +5,7 @@
 <meta charset="utf-8" />
 <title>Chamberos.Net-New Invoice</title>
 <link rel="stylesheet" href="StyleNewInvoice.css" type="text/css" />
+<script src="jquery-1.11.3.min.js" type="text/javascript"></script>  
 </head>
 <body>
     <a href="Login.html"><img class = 'img3' src="http://guide.eu5.org/images/icono-leer-circulo-cultura-biblioteca.png"></a>
@@ -20,21 +21,22 @@
  <div class='centrar'>
             <form name="input"  action="Invoices2.html">
                 <h3 class = 't1'>Cliente</h3>
-                <input class = 'cliente' type="text" name="cliente" value = "Carmen Vargas">
+                <input class = 'cliente' type="text" name="cliente" id="cliente" value="">
                 <br/>
                 <h3 class = 't2'>Descripcion de Trabajo</h3>
-                <textarea class = 'descripcion'>Costura</textarea>
+                <textarea class = 'descripcion'id="descripcion"></textarea>
                 <br/>
                 <h3 class = 't3'>Fecha</h3>
-                <input class = 'fecha' type="date picker" name="fecha" value = "30-06-2015">
+                <input class = 'fecha' type="date picker" name="fecha" id="fecha" value="">
                 <br/>
                 <h3 class = 't4'>Monto</h3>
-                <input class = 'monto' type="number" name="monto" value = "100">
+                <input class = 'monto' type="number" name="monto" id="monto" value="">
                 <br/>
-                 <input class = 'submit' type="submit" name="Save" value = "Save">
+                 <input class = 'submit' type="submit" name="Save" value="Guardar Datos" onclick="INVOICES.saveClient();">
                 <br/>
                 <a class = 'cancel' href="Invoices.html">Cancel</a>
                 </form>
-        </div>
+<script src="JavaScriptInvoices.js" type="text/javascript" ></script>       
+</div>
 </body>
 </html>
