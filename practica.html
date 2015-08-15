@@ -1,0 +1,134 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Adexso-prueba-gadget.html</title>
+</head>
+<body>
+
+<div style="background-color:#eeeeee">
+<H1 style="color:#00005f;text-indent:20px" align="left"> Creación de Documentos </H1>
+<img src="https://sites.google.com/a/adexso.com/adexso-prueba/Home/logo_Adexso_chico.jpg" align="right"/>
+</div>
+<div style="background-color:#696969">
+<h2> Creación del ID del proyecto</h2>
+<SCRIPT LANGUAGE="JavaScript"> 
+function mostrarFechaHora() 
+{ 
+var fecha 
+fecha=new Date(); 
+document.write('Hoy es '); 
+document.write(fecha.getDate()+'/'); 
+document.write((fecha.getMonth()+1)+'/'); 
+document.write(fecha.getYear()); 
+document.write('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs p;'); 
+document.write('Es la hora '); 
+document.write(fecha.getHours()+':'); 
+document.write(fecha.getMinutes()+':'); 
+document.write(fecha.getSeconds()); 
+} 
+//Llamada a la función 
+mostrarFechaHora(); 
+</SCRIPT> 
+
+<SCRIPT LANGUAGE="JavaScript"> 
+function mostrarFechaAño() 
+{ 
+var fecha 
+fecha=new Date(); 
+document.write(fecha.getYear()); 
+} 
+//Llamada a la función 
+mostrarFechaAño(); 
+</SCRIPT> 
+
+<script type="text/javascript">
+function cambiarFase()
+{
+document.form1.text1.value = document.form1.select1.options[document.form1.select1.selectedIndex].text;
+document.form1.text2.value = document.form1.select1.options [document.form1.select1.selectedIndex].value; 
+}
+function cambiarCliente()
+{
+document.form1.text3.value = document.form1.select2.options[document.form1.select2.selectedIndex].text;
+document.form1.text4.value = document.form1.select2.options [document.form1.select2.selectedIndex].value; 
+}
+</script> 
+<script language="JavaScript"> 
+function writePage(form)
+{
+var page
+page += "<html><head><title>A Dynamic Page</title></head>";
+page += "<body><H1>Creación de Documentos (dynamic page)</H1>";
+page += "<p>Bienvenido " + "&nbsp;&nbsp;" + form.nombre.value + "&nbsp;&nbsp;" + form.apellido.value + "<br><br>";
+page += "Llevas acabo el proyecto:" + "&nbsp;&nbsp;" + form.proyecto.value + "<br><br>";
+page += "El ID del documento es:<br><br>";
+page += "<b>ADX" + "-" + form.text2.value + "-" + form.text4.value + "-2008"; 
+page += "</body></html>";
+document.write(page);
+}
+</script> 
+
+<form name="form1"> <!-- onsubmit="return false"> -->
+<p>Ingrese su nombre:&nbsp;
+<input type="text" name="nombre" id="nombre" /></p>
+<p>Ingrese su apellido:&nbsp;
+<input type="text" name="apellido" id="name" /></p>
+<p>Ingrese el nombre del proyecto:&nbsp;
+<input type="text" name="proyecto" id="name" /></p>
+<p>Ingrese la fase del proyecto:&nbsp;&nbsp;
+<select size="1" name="select1" onChange="cambiarFase()">
+<option value="000">Requisitos</option>
+<option value="001">Análisis</option>
+<option value="012">Diseño</option>
+<option value="123">Implementación</option>
+<option value="456">Prueba</option> 
+
+</select>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Texto seleccionado:<input type="text" name="text1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Valor asociado:<input type="text" name="text2"><br></p>
+<p>Ingrese el Cliente:&nbsp;&nbsp;
+<select size="1" name="select2" onChange="cambiarCliente()">
+<option value="701">Telcel</option>
+<option value="702">Telefónica</option>
+<option value="703">Porta</option>
+<option value="704">Ericsson</option>
+<option value="705">Gobierno</option> 
+</select> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Texto seleccionado:<input type="text" name="text3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Valor asociado:<input type="text" name="text4"><br></p>
+<input type="button" value="&nbsp;&nbsp;&nbsp; Crear &nbsp; ID &nbsp;&nbsp;&nbsp;" onclick="writePage(this.form);"/>
+<br><br />
+</form>
+</div>
+<!-- <hr color="#778899" width="70%" size="6%"/> -->
+<div style="background-color:#eeeeee">
+<h3>Luis Barrionuevo</h3>
+<p style="color:#888888;text-indent:20px">
+Aquí <span style="background-color:#eeee00">comentarios.</span>
+Aquí comentarios.
+Aquí comentarios.
+Aquí comentarios.
+Aquí comentarios.
+Aquí comentarios.
+Aquí comentarios.
+Aquí comentarios.
+Aquí comentarios.
+Aquí comentarios.
+</p>
+<h3>Ana Rodriguez</h3>
+<p style="color:#888888;text-indent:20px">
+<span style="background-color:#eeee00">Aquí comentarios.</span>
+Aquí comentarios.
+Aquí comentarios.
+Aquí comentarios.
+Aquí comentarios.
+Aquí comentarios.
+Aquí comentarios.
+Aquí comentarios.
+Aquí comentarios.
+<!-- <hr />-->
+</p></div>
+</body>
+</html>
