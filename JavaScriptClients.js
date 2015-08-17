@@ -1,14 +1,15 @@
 var CLIENT= CLIENT || {
 
+	
+
 		Usuario: function (nombre, cedula,telefono) {
 	  this.nombre = nombre;
 	  this.cedula = cedula;
 	  this.telefono = telefono;
 
-	  this.save = function() {
-	  localStorage.setItem("nombre",this.nombre); 
-      localStorage.setItem("cedula",this.cedula); 
-      localStorage.setItem("telefono",this.telefono); 
+	  //Se guarda el arreglo en LocalStorage.
+	  this.save = function(clientes) {
+	  localStorage.setItem("clientes",JSON.stringify(clientes)); 
       alert("Datos Guardados en LocalStorage");
 	  };
 	},
@@ -20,14 +21,23 @@ var CLIENT= CLIENT || {
 	},
 
 	saveClient: function() {
+		//Valida si ya se creo el arreglo, si no, se crea para ingresar los datos.
+		if (localStorage.getItem("clientes") == null){
+			var clientes = new Array();
+			localStorage.setItem("clientes",JSON.stringify(clientes));
+		}
+		//Variables que obtienen los valores ingresados por el usuario.
 		var nombre = document.getElementById('nombre').value;
 		var cedula = document.getElementById('cedula').value;
 		var telefono = document.getElementById('telefono').value;
-		var clientes = [];
-		var cliente = ['carmen','23','888'];
-
+		//se crea un usuario y se le asignan los valores
 		var usuario = new CLIENT.Usuario(nombre, cedula,telefono);
-		usuario.save();
+		//Se crea una variable cliente donde se optienen el arreglo de clientes.
+		var clientes=JSON.parse(localStorage.getItem("clientes"));
+		//Se agrega el usuario al arreglo clientes.
+		clientes.push(usuario);
+		//Se envia el arreglo clientes con los datos.
+		usuario.save(clientes);
 	},
 
 
