@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="StyleDeleteClient.css" type="text/css" />
 </head>
 <body onLoad="cargar()">
-  <a href="Login.html"><img class = 'img3' src="http://guide.eu5.org/images/icono-leer-circulo-cultura-biblioteca.png"></a>
+  <a href="Login.html"><img class = 'img3' src="http://guide.eu5.org/images/icono-leer-circulo-cultura-biblioteca.png">alert</a>
   <h1 class = 'h3' >Susana</h1>
   <h1 class = 'delete' >DELETE CLIENT</h1>
   <a href="Client_Administration.html"><input class = 'BTN' type="submit" name="REGRESAR" value = "REGRESAR"></a>
@@ -39,6 +39,7 @@ for (var i = 0; i <= clientes.length; i++) {
   var cl = clientes[i].nombre;
         if (cl==cod) {
           delete clientes[i];
+        localStorage.removeItem("clientes");
         localStorage.setItem("clientes",JSON.stringify(clientes)); 
         alert("Datos Guardados en LocalStorage");
         }
