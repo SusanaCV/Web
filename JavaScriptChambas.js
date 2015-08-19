@@ -1,37 +1,43 @@
 var CHAMBAS= CHAMBAS || {
 
-		Usuario: function (nombre, cedula,telefono) {
-	  this.nombre = nombre;
-	  this.cedula = cedula;
-	  this.telefono = telefono;
+Usuario: function (cliente, descripcion,fecha,notas) {
+		this.cliente = cliente;
+		this.descripcion = descripcion;
+		this.fecha = fecha;
+		this.notas = notas;
 
-	  this.save = function() {
-	  	//insert into 
-	  localStorage.setItem("nombre",this.nombre); 
-      localStorage.setItem("cedula",this.cedula); 
-      localStorage.setItem("telefono",this.telefono); 
-      alert("Datos Guardados en LocalStorage");
-	  	// save to localstorage
+	  //Se guarda el arreglo en LocalStorage.
+	  this.save = function(chambas) {
+	  	localStorage.setItem("chambas",JSON.stringify(chambas)); 
+	  	alert("Datos Guardados en LocalStorage");
 	  };
 	},
 
 	leerDatos: function (){
-	document.forms[0].nombre.value=localStorage.getItem("nombre");
-   document.forms[0].cedula.value=localStorage.getItem("cedula");
-   document.forms[0].telefono.value=localStorage.getItem("telefono");
-	alert("Nombre: "+localStorage.getItem("nombre")+"\n"+"Apellido: "+localStorage.getItem("cedula")+"\n"+"Telefono: "+localStorage.getItem("telefono"));
+		document.forms[0].cliente.value=localStorage.getItem("cliente");
+		document.forms[0].descripcion.value=localStorage.getItem("descripcion");
+		document.forms[0].fecha.value=localStorage.getItem("fecha");
+		document.forms[0].notas.value=localStorage.getItem("notas");
 	},
 
-	saveClient: function() {
-		/*var contents = $('#contents');*/
-		var nombre = document.getElementById('nombre').value;
-		var cedula = document.getElementById('cedula').value;
-		var telefono = document.getElementById('telefono').value;
-
-
-		var usuario = new TAREA.Usuario(nombre, cedula,telefono);
-		usuario.save();
+	saveChambas: function() {
+		//Valida si ya se creo el arreglo, si no, se crea para ingresar los datos.
+		if (localStorage.getItem("chambas") == null){
+			var chambas = new Array();
+			localStorage.setItem("chambas",JSON.stringify(chambas));
+		}
+		//Variables que obtienen los valores ingresados por el usuario.
+		var cliente = document.getElementById('cliente').value;
+		var descripcion = document.getElementById('descripcion').value;
+		var fecha = document.getElementById('fecha').value;
+		var notas = document.getElementById('notas').value;
+		//se crea un usuario y se le asignan los valores
+		var usuario = new CHAMBAS.Usuario(cliente, descripcion,fecha,notas);
+		//Se crea una variable cliente donde se optienen el arreglo de chambas.
+		var chambas=JSON.parse(localStorage.getItem("chambas"));
+		//Se agrega el usuario al arreglo chambas.
+		chambas.push(usuario);
+		//Se envia el arreglo chambas con los datos.
+		usuario.save(chambas);
 	},
-
-
 };

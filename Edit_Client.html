@@ -30,7 +30,7 @@
             <br/>
             <input class = 'submit' name="Save" value="Editar Datos" onclick="CLIENT.saveClient();">
             <br/>
-            <a class = 'cancel' href="Client_Administration.html">Cancel</a>
+            <a class = 'cancel' name="Save" value="Buscar Datos" onclick="buscar();">Cancel</a>
         </form>
         <script type="text/javascript">
         function cargar()
@@ -41,7 +41,13 @@
                 select.options[select.options.length] = new Option(clientes[index].nombre);
             };
         }
-        </script>
-    </div>
+        function buscar()
+        {
+            var dato= document.getElementById('nombre').value;
+             alert(dato);
+        }
+        
+    </script>
+</div>
 </body>
 </html>

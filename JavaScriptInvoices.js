@@ -1,10 +1,9 @@
 var INVOICES= INVOICES || {
 
-	Usuario: function (cliente, descripcion,fecha,monto) {
-		this.cliente = cliente;
-		this.descripcion = descripcion;
-		this.fecha = fecha;
-		this.monto = monto;
+	Usuario: function (nombre, cedula,telefono) {
+		this.nombre = nombre;
+		this.cedula = cedula;
+		this.telefono = telefono;
 
 	  //Se guarda el arreglo en LocalStorage.
 	  this.save = function(clientes) {
@@ -15,9 +14,8 @@ var INVOICES= INVOICES || {
 
 	leerDatos: function (){
 		document.forms[0].nombre.value=localStorage.getItem("nombre");
-		document.forms[0].descripcion.value=localStorage.getItem("descripcion");
-		document.forms[0].fecha.value=localStorage.getItem("fecha");
-		document.forms[0].monto.value=localStorage.getItem("monto");
+		document.forms[0].cedula.value=localStorage.getItem("cedula");
+		document.forms[0].telefono.value=localStorage.getItem("telefono");
 	},
 
 	saveClient: function() {
@@ -27,12 +25,11 @@ var INVOICES= INVOICES || {
 			localStorage.setItem("clientes",JSON.stringify(clientes));
 		}
 		//Variables que obtienen los valores ingresados por el usuario.
-		var cliente = document.getElementById('cliente').value;
-		var fecha = document.getElementById('fecha').value;
-		var descripcion = document.getElementById('descripcion').value;
-		var monto = document.getElementById('monto').value;
+		var nombre = document.getElementById('nombre').value;
+		var cedula = document.getElementById('cedula').value;
+		var telefono = document.getElementById('telefono').value;
 		//se crea un usuario y se le asignan los valores
-		var usuario = new INVOICES.Usuario(nombre, cedula,telefono);
+		var usuario = new CLIENT.Usuario(nombre, cedula,telefono);
 		//Se crea una variable cliente donde se optienen el arreglo de clientes.
 		var clientes=JSON.parse(localStorage.getItem("clientes"));
 		//Se agrega el usuario al arreglo clientes.
@@ -40,5 +37,4 @@ var INVOICES= INVOICES || {
 		//Se envia el arreglo clientes con los datos.
 		usuario.save(clientes);
 	},
-
 };
