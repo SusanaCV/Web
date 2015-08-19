@@ -5,11 +5,13 @@
   <title>Chamberos.Net-Invoices</title>
   <link rel="stylesheet" href="StyleInvoices.css" type="text/css" />
 </head>
-<body>
+<body onLoad="ListarInvoices()">
   <a href="Login.html"><img class = 'img3' src="http://guide.eu5.org/images/icono-leer-circulo-cultura-biblioteca.png"></a>
   <h1 class = 'h3' >Susana</h1>
   <h1 class = 'invoice' >INVOICES</h1>
   <a href="New_Invoice.html"><input class = 'BTN' type="submit" name="NEW INVOICES" value = "NEW INVOICES"></a>
+  <a href="Edit_Invoice.html"><input class = 'BTN1' type="submit" name="EDIT CLIENT" value = "EDIT CLIENT"></a>
+  <a href="Delete_Invoice.html"><input class = 'BTN2' type="submit" name="DELETE CLIENT" value = "DELETE CLIENT"></a>
   <img class = 'imgInvoice' src="http://guide.eu5.org/images/invoice.jpg">
   <td><a href="Dashboard.html"><img class = 'imgAtras' src="http://guide.eu5.org/images/atras.png"></a>
     <div id="menu">
@@ -20,41 +22,41 @@
     <div  class='centrar'>
       <table class='tabla'>
         <tr>
-          <th>INVOICE</th>
-          <th>CLIENT</th>
-          <th>DESCRIPCION DEL TRABAJO</th>
-          <th>FECHA</th>
-          <th>MONTO</th>
-          <th>ACTION</th>
+          <th width="1%">INVOICE</th>
+          <th width="6%">CLIENT</th>
+          <th width="10%">DESCRIPCION DEL TRABAJO</th>
+          <th width="9%">FECHA</th>
+          <th width="9%">MONTO</th>
         </tr>
-        <tr class='modo1'>
-          <td>1</td>
-          <td>Carmen Corrales Vargas</td>
-          <td>Costura</td>
-          <td>10-03-2015</td>
-          <td>$390</td>
-          <td><a href="Edit_Invoice.html"><img class = 'img2' src="http://guide.eu5.org/images/ediat.png"></a>
-            <a href="Delete_Invoice.html"><img class = 'img1' src="http://guide.eu5.org/images/eliminar.png"></a></td>
-          </tr>
-          <tr class='modo1'>
-            <td>2</td>
-            <td>Denia Corrales Vargas</td>
-            <td>Mantenimiento</td>
-            <td>17-05-2015</td>
-            <td>$200</td>
-            <td><a href="Edit_Invoice.html"><img class = 'img2' src="http://guide.eu5.org/images/ediat.png"></a>
-              <a href="Delete_Invoice.html"><img class = 'img1' src="http://guide.eu5.org/images/eliminar.png"></a></td>
-            </tr>
-            <tr class='modo1'>
-              <td>3</td>
-              <td>Carlos Corrales Rodriguez</td>
-              <td>Agricultura</td>
-              <td>30-06-2015</td>
-              <td>$600</td>
-              <td><a href="Edit_Invoice.html"><img class = 'img2' src="http://guide.eu5.org/images/ediat.png"></a>
-                <a href="Delete_Invoice.html"><img class = 'img1' src="http://guide.eu5.org/images/eliminar.png"></a></td>
-              </tr>
-            </table>
-          </div>
-        </body>
-        </html>
+      </table><br>
+      <table class='tabla' id="tabla">
+        <tr>
+
+        </tr>
+      </table><br>
+      <script>
+      function ListarInvoices()
+      {
+        var table = document.getElementById("tabla");
+        {
+          var invoices=JSON.parse(localStorage.getItem("invoices"));
+          for (var i = 0; i <= invoices.length; i++) {
+            var row = table.insertRow(0);
+            var invoice = row.insertCell(0);
+            var cliente = row.insertCell(1);
+            var descripcion = row.insertCell(2);
+            var fecha = row.insertCell(3);
+            var monto = row.insertCell(4);
+            invoice.innerHTML = invoices[i].invoice;
+            cliente.innerHTML = invoices[i].cliente;
+            descripcion.innerHTML = invoices[i].descripcion;
+            fecha.innerHTML = invoices[i].fecha;
+            monto.innerHTML = invoices[i].monto;
+          };
+
+        }
+      }
+      </script>
+    </div>
+  </body>
+  </html>

@@ -31,6 +31,7 @@
             <input class = 'submit' name="Save" value="Editar Datos" onclick="CLIENT.saveClient();">
             <br/>
             <a class = 'cancel' name="Save" value="Buscar Datos" onclick="buscar();">Cancel</a>
+
         </form>
         <script type="text/javascript">
         function cargar()
@@ -43,8 +44,15 @@
         }
         function buscar()
         {
-            var dato= document.getElementById('nombre').value;
-             alert(dato);
+            var cod = document.getElementById("eliminar").value;
+            alert(cod);
+            var clientes=JSON.parse(localStorage.getItem("clientes"));
+            for (var i = 0; i <= clientes.length; i++) {
+                alert(clientes[i].nombre);
+            if (clientes[i].nombre==cod) {
+            alert(clientes[i].nombre);
+        }
+      }
         }
         
     </script>

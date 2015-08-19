@@ -19,7 +19,10 @@
         <a href="Invoices.html"><menu class = color><center>INVOICES</center></menu></a>
     </div>
     <div class='centrar'>
-        <form name="input"  action="Invoices2.html">
+        <form name="input"  action="Invoices.html">
+            <h3 class = 't'>Invoice</h3>
+            <input class = 'invoice' type="text" name="invoice" id="invoice" value="">
+            <br/>
             <h3 class = 't1'>Cliente</h3>
             <input class = 'cliente' type="text" name="cliente" id="cliente" value="">
             <br/>
@@ -32,11 +35,48 @@
             <h3 class = 't4'>Monto</h3>
             <input class = 'monto' type="number" name="monto" id="monto" value="">
             <br/>
-            <input class = 'submit' type="submit" name="Save" value="Guardar Datos" onclick="INVOICES.saveClient();">
+            <input class = 'submit' type="submit" name="Save" value="Guardar Datos" onclick="saveClient();">
             <br/>
             <a class = 'cancel' href="Invoices.html">Cancel</a>
         </form>
-        <script src="JavaScriptInvoices.js" type="text/javascript" ></script>       
+        <script type="text/javascript" >
+            function Usuario(invoice,cliente, descripcion,fecha,monto) {
+        this.invoice = invoice;
+        this.cliente = cliente;
+        this.descripcion = descripcion;
+        this.fecha = fecha;
+        this.monto = monto;
+
+      //Se guarda el arreglo en LocalStorage.
+      this.save = function(invoices) {
+        localStorage.setItem("invoices",JSON.stringify(invoices)); 
+        alert("Datos Guardados en LocalStorage");
+      };
+    }
+
+    function saveClient() {
+        //Valida si ya se creo el arreglo, si no, se crea para ingresar los datos.
+        if (localStorage.getItem("invoices") == null){
+            var invoices = new Array();
+            localStorage.setItem("invoices",JSON.stringify(invoices));
+        }
+        //Variables que obtienen los valores ingresados por el usuario.
+        var invoice = document.getElementById('invoice').value;
+        var cliente = document.getElementById('cliente').value;
+        var descripcion = document.getElementById('descripcion').value;
+        var fecha = document.getElementById('fecha').value;
+        var monto = document.getElementById('monto').value;
+        //se crea un usuario y se le asignan los valores
+        var usuario = new Usuario(invoice,cliente, descripcion,fecha,monto);
+        //Se crea una variable invoices donde se optienen el arreglo de invoices.
+        var invoices=JSON.parse(localStorage.getItem("invoices"));
+        //Se agrega el usuario al arreglo invoices.
+        invoices.push(usuario);
+        //Se envia el arreglo invoices con los datos.
+        usuario.save(invoices);
+    }
+    </script>       
     </div>
+<script src="JavaScriptChambas.js" type="text/javascript" ></script>  
 </body>
 </html>

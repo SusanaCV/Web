@@ -1,56 +1,59 @@
 </html>
 <!DOCTYPE html>
 <head>
-<meta charset="utf-8" />
-<title>Chamberos.Net-Chambas</title>
-<link rel="stylesheet" href="StyleChambas.css" type="text/css" />
+  <meta charset="utf-8" />
+  <title>Chamberos.Net-Chambas</title>
+  <link rel="stylesheet" href="StyleChambas.css" type="text/css" />
 </head>
-<body>
-    <a href="Login.html"><img class = 'img3' src="http://guide.eu5.org/images/icono-leer-circulo-cultura-biblioteca.png"></a>
-    <h1 class = 'h3' >Susana</h1>
-    <h1 class = 'chambas' >CHAMBAS</h1>
-    <a href="NewChambas.html"><input class = 'BTN' type="submit" name="NEW CHAMBAS" value = "NEW CHAMBAS"></a>
-    <img class = 'imgChambas' src="http://guide.eu5.org/images/invoice.jpg">
-     <td><a href="Dashboard.html"><img class = 'imgAtras' src="http://guide.eu5.org/images/atras.png"></a>
-<div id="menu">
-    <a href="Client_Administration.html"><menu><center>CLIENT</center></menu></a>
-    <a href="Chambas.html"><menu  class = color><center>CHAMBAS</center></menu></a>
-    <a href="Invoices.html"><menu><center>INVOICES</center></menu></a>
-</div>
-<div  class='centrar'>
-<table class='tabla'>
-  <tr>
-    <th>CLIENT</th>
-    <th>DESCRIPCION DEL TRABAJO</th>
-    <th>fECHA</th>
-    <th>NOTAS</th>
-    <th>ACTIONS</th>
-  </tr>
-  <tr class='modo1'>
-    <td>Carmen Corrales Vargas</td>
-    <td>Diseño de blusas</td>
-    <td>10-03-2015</td>
-    <td>3 blusas</td>
-      <td><a href="EditChambas.html"><img class = 'img2' src="http://guide.eu5.org/images/ediat.png"></a>
-      <a href="DeleteChambas.html"><img class = 'img1' src="http://guide.eu5.org/images/eliminar.png"></a></td>
-  </tr>
-    <tr class='modo1'>
-    <td>Denia Corrales Vargas</td>
-    <td>Mantenimiento de hogar</td>
-    <td>17-05-2015</td>
-    <td>3 habitaciones</td>
-      <td><a href="EditChambas.html"><img class = 'img2' src="http://guide.eu5.org/images/ediat.png"></a>
-      <a href="DeleteChambas.html"><img class = 'img1' src="http://guide.eu5.org/images/eliminar.png"></a></td>
-  </tr>
-    <tr class='modo1'>
-    <td>Carlos Corrales Rodriguez</td>
-    <td>Siembra de arboles</td>
-    <td>30-06-2015</td>
-    <td>50 arboles</td>
-      <td><a href="EditChambas.html"><img class = 'img2' src="http://guide.eu5.org/images/ediat.png"></a>
-      <a href="DeleteChambas.html"><img class = 'img1' src="http://guide.eu5.org/images/eliminar.png"></a></td>
-  </tr>
-</table>
-</div>
-</body>
-</html>
+<body onLoad="ListarChambas()">
+  <a href="Login.html"><img class = 'img3' src="http://guide.eu5.org/images/icono-leer-circulo-cultura-biblioteca.png"></a>
+  <h1 class = 'h3' >Susana</h1>
+  <h1 class = 'chambas' >CHAMBAS</h1>
+  <a href="NewChambas.html"><input class = 'BTN' type="submit" name="NEW CHAMBAS" value = "NEW CHAMBAS"></a>
+  <a href="EditChambas.html"><input class = 'BTN1' type="submit" name="EDIT CLIENT" value = "EDIT CLIENT"></a>
+  <a href="DeleteChambas.html"><input class = 'BTN2' type="submit" name="DELETE CLIENT" value = "DELETE CLIENT"></a>
+  <img class = 'imgChambas' src="http://guide.eu5.org/images/invoice.jpg">
+  <td><a href="Dashboard.html"><img class = 'imgAtras' src="http://guide.eu5.org/images/atras.png"></a>
+    <div id="menu">
+      <a href="Client_Administration.html"><menu><center>CLIENT</center></menu></a>
+      <a href="Chambas.html"><menu  class = color><center>CHAMBAS</center></menu></a>
+      <a href="Invoices.html"><menu><center>INVOICES</center></menu></a>
+    </div>
+    <div  class='centrar'>
+      <table class='tabla'>
+        <tr>
+          <th width="15%">CLIENT</th>
+          <th width="20%">DESCRIPCION DEL TRABAJO</th>
+          <th width="20%">fECHA</th>
+          <th>NOTAS</th>
+        </tr>
+      </table><br>
+      <table class='tabla' id="tabla">
+        <tr>
+
+        </tr>
+      </table><br>
+      <script>
+      function ListarChambas()
+      {
+        var table = document.getElementById("tabla");
+        {
+          var chambas=JSON.parse(localStorage.getItem("chambas"));
+          for (var i = 0; i <= chambas.length; i++) {
+            var row = table.insertRow(0);
+            var cliente = row.insertCell(0);
+            var descripcion = row.insertCell(1);
+            var fecha = row.insertCell(2);
+            var notas = row.insertCell(3);
+            cliente.innerHTML = chambas[i].cliente;
+            descripcion.innerHTML = chambas[i].descripcion;
+            fecha.innerHTML = chambas[i].fecha;
+            notas.innerHTML = chambas[i].notas;
+          };
+
+        }
+      }
+      </script>
+    </div>
+  </body>
+  </html>

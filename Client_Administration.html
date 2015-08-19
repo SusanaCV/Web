@@ -5,7 +5,7 @@
   <title>Chamberos.Net-Client Administration</title>
   <link rel="stylesheet" href="StyleClientAdmin.css" type="text/css" />
 </head>
-<body onLoad="myCreateFunction()">
+<body onLoad="ListarClient()">
   <a href="Login.html"><img class = 'img3' src="http://guide.eu5.org/images/icono-leer-circulo-cultura-biblioteca.png"></a>
   <h1 class = 'h3' >Susana</h1>
   <h1 class = 'client' >Client Administration</h1>
@@ -29,15 +29,15 @@
       </tr>
     </table><br>
 
-<table class='tabla' id="myTable">
+<table class='tabla' id="tabla">
 <tr>
 
 </tr>
 </table><br>
 <script>
-function myCreateFunction()
+function ListarClient()
 {
-var table = document.getElementById("myTable");
+var table = document.getElementById("tabla");
     {
       var clientes=JSON.parse(localStorage.getItem("clientes"));
       for (var i = 0; i <= clientes.length; i++) {

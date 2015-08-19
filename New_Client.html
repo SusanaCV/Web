@@ -1,37 +1,69 @@
 </html>
 <!DOCTYPE html>
 <head>
-<meta charset="utf-8" />
-<title>Chamberos.Net-New Client</title>
-<link rel="stylesheet" href="StyleNewClient.css" type="text/css" />
+    <meta charset="utf-8" />
+    <title>Chamberos.Net-New Client</title>
+    <link rel="stylesheet" href="StyleNewClient.css" type="text/css" />
 </head>
 <body>
     <a href="Login.html"><img class = 'img3' src="http://guide.eu5.org/images/icono-leer-circulo-cultura-biblioteca.png"></a>
     <h1 class = 'h3' >Susana</h1>
-     <h1 class = 'NEW' >NEW CLIENT</h1>
-     <a href="Client_Administration.html"><input class = 'BTN' type="submit" name="REGRESAR" value = "REGRESAR"></a>
+    <h1 class = 'NEW' >NEW CLIENT</h1>
+    <a href="Client_Administration.html"><input class = 'BTN' type="submit" name="REGRESAR" value = "REGRESAR"></a>
     <img class = 'imgNew' src="http://guide.eu5.org/images/add_male_user_98364.jpg">
-<div id="menu">
-    <a href="Client_Administration.html"><menu class = color><center>CLIENT</center></menu></a>
-    <a href="Chambas.html"><menu><center>CHAMBAS</center></menu></a>
-    <a href="Invoices.html"><menu><center>INVOICES</center></menu></a>
-</div>
- <div class='centrar'>
-            <form name="input"  action="Client2.html">
-                <h3 class = 't2'>Nombre Completo</h3>
-                <input class = 'nombre' type="text" name="nombre" id="nombre" value="">
-                <br/>
-                <h3 class = 't3'>Cedula</h3>
-                <input class = 'cedula' type="text" name="cedula" id="cedula" value="">
-                <br/>
-                <h3 class = 't4'>Telefono</h3>
-                <input class = 'telefono' type="number" name="telefono" id="telefono" value="">
-                <br/>
-                <input class = 'submit' name="Save" value="Guardar Datos" onclick="CLIENT.saveClient();">
-                <br/>
-                <a class = 'cancel' href="Client_Administration.html">Cancel</a>
-                </form>
-        </div>
-<script src="JavaScriptClients.js" type="text/javascript" ></script>     
+    <div id="menu">
+        <a href="Client_Administration.html"><menu class = color><center>CLIENT</center></menu></a>
+        <a href="Chambas.html"><menu><center>CHAMBAS</center></menu></a>
+        <a href="Invoices.html"><menu><center>INVOICES</center></menu></a>
+    </div>
+    <div class='centrar'>
+        <form name="input"  action="Client.html">
+            <h3 class = 't2'>Nombre Completo</h3>
+            <input class = 'nombre' type="text" name="nombre" id="nombre" value="">
+            <br/>
+            <h3 class = 't3'>Cedula</h3>
+            <input class = 'cedula' type="text" name="cedula" id="cedula" value="">
+            <br/>
+            <h3 class = 't4'>Telefono</h3>
+            <input class = 'telefono' type="number" name="telefono" id="telefono" value="">
+            <br/>
+            <input class = 'submit' name="Save" value="Guardar Datos" onclick="saveClient();">
+            <br/>
+            <a class = 'cancel' href="Client_Administration.html">Cancel</a>
+        </form>
+    </div>
+    <script type="text/javascript" > 
+    function Usuario  (nombre, cedula,telefono) {
+        this.nombre = nombre;
+        this.cedula = cedula;
+        this.telefono = telefono;
+
+      //Se guarda el arreglo en LocalStorage.
+      this.save = function(clientes) {
+        localStorage.setItem("clientes",JSON.stringify(clientes)); 
+        alert("Datos Guardados en LocalStorage");
+    };
+}
+
+function saveClient() {
+        //Valida si ya se creo el arreglo, si no, se crea para ingresar los datos.
+        if (localStorage.getItem("clientes") == null){
+            var clientes = new Array();
+            localStorage.setItem("clientes",JSON.stringify(clientes));
+        }
+        //Variables que obtienen los valores ingresados por el usuario.
+        var nombre = document.getElementById('nombre').value;
+        var cedula = document.getElementById('cedula').value;
+        var telefono = document.getElementById('telefono').value;
+        //se crea un usuario y se le asignan los valores
+        var usuario = new Usuario(nombre, cedula,telefono);
+        //Se crea una variable cliente donde se optienen el arreglo de clientes.
+        var clientes=JSON.parse(localStorage.getItem("clientes"));
+        //Se agrega el usuario al arreglo clientes.
+        clientes.push(usuario);
+        //Se envia el arreglo clientes con los datos.
+        usuario.save(clientes);
+    }
+    </script>     
 </body>
 </html>
