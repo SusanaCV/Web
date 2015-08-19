@@ -2,36 +2,46 @@
 <!DOCTYPE html>
 <head>
 
-<meta charset="utf-8" />
-<title>Chamberos.Net-Edit Client</title>
-<link rel="stylesheet" href="StyleEditClient.css" type="text/css" />
+    <meta charset="utf-8" />
+    <title>Chamberos.Net-Edit Client</title>
+    <link rel="stylesheet" href="StyleEditClient.css" type="text/css" />
 </head>
-<body>
+<body onLoad="cargar()">
     <a href="Login.html"><img class = 'img3' src="http://guide.eu5.org/images/icono-leer-circulo-cultura-biblioteca.png"></a>
     <h1 class = 'h3' >Susana</h1>
-     <h1 class = 'EDIT' >EDIT CLIENT</h1>
+    <h1 class = 'EDIT' >EDIT CLIENT</h1>
     <a href="Client_Administration.html"><input class = 'BTN' type="submit" name="REGRESAR" value = "REGRESAR"></a>
     <img class = 'imgEdit' src="http://guide.eu5.org/images/experiencia-de-usuario.jpg">
-<div id="menu">
-    <a href="Client_Administration.html"><menu class = color><center>CLIENT</center></menu></a>
-    <a href="Chambas.html"><menu><center>CHAMBAS</center></menu></a>
-    <a href="Invoices.html"><menu><center>INVOICES</center></menu></a>
-</div>
- <div class='centrar'>
-            <form name="input"  action="EditClient2.html">
-                <h3 class = 't2'>Nombre Completo</h3>
-                <input class = 'nombre' type="text" name="nombre" value = "Carlos Corrales">
-                <br/>
-                <h3 class = 't3'>Cedula</h3>
-                <input class = 'cedula' type="text" name="cedula" value = "203800969">
-                <br/>
-                <h3 class = 't4'>Telefono</h3>
-                <input class = 'telefono' type="number" name="telefono" value = "84259339">
-                <br/>
-                 <input class = 'submit' type="submit" name="Save" value = "Save">
-                <br/>
-                <a class = 'cancel' href="Client_Administration.html">Cancel</a>
-                </form>
-        </div>
+    <div id="menu">
+        <a href="Client_Administration.html"><menu class = color><center>CLIENT</center></menu></a>
+        <a href="Chambas.html"><menu><center>CHAMBAS</center></menu></a>
+        <a href="Invoices.html"><menu><center>INVOICES</center></menu></a>
+    </div>
+    <div class='centrar'>
+        <form name="input"  action="EditClient2.html">
+            <h3 class = 't2'>Nombre Completo</h3>
+            <select class = 'nombre' id="lista"><option value="">Clientes</option></select>
+            <br/>
+            <h3 class = 't3'>Cedula</h3>
+            <input class = 'cedula' type="text" name="cedula" id="cedula" value="">
+            <br/>
+            <h3 class = 't4'>Telefono</h3>
+            <input class = 'telefono' type="number" name="telefono" id="telefono" value="">
+            <br/>
+            <input class = 'submit' name="Save" value="Editar Datos" onclick="CLIENT.saveClient();">
+            <br/>
+            <a class = 'cancel' href="Client_Administration.html">Cancel</a>
+        </form>
+        <script type="text/javascript">
+        function cargar()
+        {
+            var select = document.getElementById("lista");
+            var clientes=JSON.parse(localStorage.getItem("clientes"));
+            for(var index = 0; index < clientes.length; index++) {
+                select.options[select.options.length] = new Option(clientes[index].nombre);
+            };
+        }
+        </script>
+    </div>
 </body>
 </html>

@@ -1,59 +1,58 @@
-</html>
 <!DOCTYPE html>
+<html>
 <head>
-<meta charset="utf-8" />
-<title>Chamberos.Net-Client Administration</title>
-<link rel="stylesheet" href="StyleClientAdmin.css" type="text/css" />
+  <meta charset="utf-8" />
+  <title>Chamberos.Net-Client Administration</title>
+  <link rel="stylesheet" href="StyleClientAdmin.css" type="text/css" />
 </head>
-<body>
-    <a href="Login.html"><img class = 'img3' src="http://guide.eu5.org/images/icono-leer-circulo-cultura-biblioteca.png"></a>
-    <h1 class = 'h3' >Susana</h1>
-    <h1 class = 'client' >Client Administration</h1>
-    <a href="New_Client.html"><input class = 'BTN' type="submit" name="NEW CLIENT" value = "NEW CLIENT"></a>
-    <img class = 'imgClient' src="http://guide.eu5.org/images/icono_clientes2.png">
-    <a href="Dashboard.html"><img class = 'imgAtras' src="http://guide.eu5.org/images/atras.png"></a>
-<div id="menu">
+<body onLoad="myCreateFunction()">
+  <a href="Login.html"><img class = 'img3' src="http://guide.eu5.org/images/icono-leer-circulo-cultura-biblioteca.png"></a>
+  <h1 class = 'h3' >Susana</h1>
+  <h1 class = 'client' >Client Administration</h1>
+  <a href="New_Client.html"><input class = 'BTN' type="submit" name="NEW CLIENT" value = "NEW CLIENT"></a>
+  <a href="Edit_Client.html"><input class = 'BTN1' type="submit" name="EDIT CLIENT" value = "EDIT CLIENT"></a>
+  <a href="Delete_Client.html"><input class = 'BTN2' type="submit" name="DELETE CLIENT" value = "DELETE CLIENT"></a>
+  <img class = 'imgClient' src="http://guide.eu5.org/images/icono_clientes2.png">
+  <a href="Dashboard.html"><img class = 'imgAtras' src="http://guide.eu5.org/images/atras.png"></a>
+  <div id="menu">
     <a href="Client_Administration.html"><menu class = color><center>CLIENT</center></menu></a>
     <a href="Chambas.html"><menu><center>CHAMBAS</center></menu></a>
     <a href="Invoices.html"><menu><center>INVOICES</center></menu></a>
-</div>
-<div  class='centrar'>
-<table class='tabla'>
-  <tr>
-    <th>CEDULA</th>
-    <th>NOMBRE COMPLETO</th>
-    <th>TELEFONO</th>
-    <th>ACTION</th>
-  </tr>
-  <tr class='modo1'>
-    <td>206850669</td>
-    <td>Carmen Corrales Vargas</td>
-    <td>84987756</td>
-     <td><a href="Edit_Client.html"><img class = 'img2' src="http://guide.eu5.org/images/ediat.png"></a>
-      <a href="Delete_Client.html"><img class = 'img1' src="http://guide.eu5.org/images/eliminar.png"></a></td>
-  </tr>
-    <tr class='modo1'>
-    <td>206780027</td>
-    <td>Denia Corrales Vargas</td>
-    <td>86747478</td>
-     <td><a href="Edit_Client.html"><img class = 'img2' src="http://guide.eu5.org/images/ediat.png"></a>
-      <a href="Delete_Client.html"><img class = 'img1' src="http://guide.eu5.org/images/eliminar.png"></a></td>
-  </tr>
-    <tr class='modo1'>
-    <td>203800969</td>
-    <td>Carlos Corrales Rodriguez</td>
-    <td>84259339</td>
-     <td><a href="Edit_Client.html"><img class = 'img2' src="http://guide.eu5.org/images/ediat.png"></a>
-      <a href="Delete_Client.html"><img class = 'img1' src="http://guide.eu5.org/images/eliminar.png"></a></td>
-  </tr>
-  <tr class='modo1'>
-    <td>206850669</td>
-    <td>Carmen Corrales Vargas</td>
-    <td>84987756</td>
-     <td><a href="Edit_Client.html"><img class = 'img2' src="http://guide.eu5.org/images/ediat.png"></a>
-      <a href="Delete_Client.html"><img class = 'img1' src="http://guide.eu5.org/images/eliminar.png"></a></td>
-  </tr>
-</table>
+  </div>
+  <div  class='centrar'>
+    <table class='tabla'>
+      <tr>
+        <th>CEDULA</th>
+        <th>NOMBRE COMPLETO</th>
+        <th>TELEFONO</th>
+        <th>OPCIONES</th>
+      </tr>
+    </table><br>
+
+<table class='tabla' id="myTable">
+<tr>
+
+</tr>
+</table><br>
+<script>
+function myCreateFunction()
+{
+var table = document.getElementById("myTable");
+    {
+      var clientes=JSON.parse(localStorage.getItem("clientes"));
+      for (var i = 0; i <= clientes.length; i++) {
+        var row = table.insertRow(0);
+        var CEDULA = row.insertCell(0);
+        var NOMBRE = row.insertCell(1);
+        var TELEFONO = row.insertCell(2);
+        CEDULA.innerHTML = clientes[i].cedula;
+        NOMBRE.innerHTML = clientes[i].nombre;
+        TELEFONO.innerHTML = clientes[i].telefono;
+      };
+
+    }
+}
+</script>
 </div>
 </body>
 </html>

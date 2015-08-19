@@ -1,23 +1,20 @@
 var CLIENT= CLIENT || {
-
-	
-
-		Usuario: function (nombre, cedula,telefono) {
-	  this.nombre = nombre;
-	  this.cedula = cedula;
-	  this.telefono = telefono;
+	Usuario: function (nombre, cedula,telefono) {
+		this.nombre = nombre;
+		this.cedula = cedula;
+		this.telefono = telefono;
 
 	  //Se guarda el arreglo en LocalStorage.
 	  this.save = function(clientes) {
-	  localStorage.setItem("clientes",JSON.stringify(clientes)); 
-      alert("Datos Guardados en LocalStorage");
+	  	localStorage.setItem("clientes",JSON.stringify(clientes)); 
+	  	alert("Datos Guardados en LocalStorage");
 	  };
 	},
 
 	leerDatos: function (){
-	document.forms[0].nombre.value=localStorage.getItem("nombre");
-   document.forms[0].cedula.value=localStorage.getItem("cedula");
-   document.forms[0].telefono.value=localStorage.getItem("telefono");
+		document.forms[0].nombre.value=localStorage.getItem("nombre");
+		document.forms[0].cedula.value=localStorage.getItem("cedula");
+		document.forms[0].telefono.value=localStorage.getItem("telefono");
 	},
 
 	saveClient: function() {
@@ -39,6 +36,45 @@ var CLIENT= CLIENT || {
 		//Se envia el arreglo clientes con los datos.
 		usuario.save(clientes);
 	},
+	cargarDatos: function(){
+		var select = document.getElementById("lista");
+		var clientes=JSON.parse(localStorage.getItem("clientes"));
+		for(var index = 0; index < clientes.length; index++) {
+			select.options[select.options.length] = new Option(clientes[index].nombre);
+		}
+		editClient: function() {
 
+			var nombre = document.getElementById('nombre').value;
+			var cedula = document.getElementById('cedula').value;
+			var telefono = document.getElementById('telefono').value;
+			{
+				var clientes=JSON.parse(localStorage.getItem("clientes"));
+				for (var i = 0; i <= clientes.length; i++) {
+					if(clientes[i].nombre==this.nombre)
+					{
+						clientes[i].nombre=this.nombre;
+						clientes[i].cedula=this.cedula;
+						clientes[i].telefono=this.telefono;
+					};
+				};
 
-};
+			}
+		},
+
+		ListarClient: function() {
+			var table = document.getElementById("myTable");
+			{
+				var clientes=JSON.parse(localStorage.getItem("clientes"));
+				for (var i = 0; i <= clientes.length; i++) {
+					var row = table.insertRow(0);
+					var CEDULA = row.insertCell(0);
+					var NOMBRE = row.insertCell(1);
+					var TELEFONO = row.insertCell(2);
+					CEDULA.innerHTML = clientes[i].cedula;
+					NOMBRE.innerHTML = clientes[i].nombre;
+					TELEFONO.innerHTML = clientes[i].telefono;
+				};
+
+			}
+		},
+	};
