@@ -13,13 +13,6 @@ Usuario: function (cliente, descripcion,fecha,notas) {
 	  };
 	},
 
-	leerDatos: function (){
-		document.forms[0].cliente.value=localStorage.getItem("cliente");
-		document.forms[0].descripcion.value=localStorage.getItem("descripcion");
-		document.forms[0].fecha.value=localStorage.getItem("fecha");
-		document.forms[0].notas.value=localStorage.getItem("notas");
-	},
-
 	saveChambas: function() {
 		//Valida si ya se creo el arreglo, si no, se crea para ingresar los datos.
 		if (localStorage.getItem("chambas") == null){

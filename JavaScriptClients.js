@@ -11,12 +11,6 @@ var CLIENT= CLIENT || {
 	  };
 	},
 
-	leerDatos: function (){
-		document.forms[0].nombre.value=localStorage.getItem("nombre");
-		document.forms[0].cedula.value=localStorage.getItem("cedula");
-		document.forms[0].telefono.value=localStorage.getItem("telefono");
-	},
-
 	saveClient: function() {
 		//Valida si ya se creo el arreglo, si no, se crea para ingresar los datos.
 		if (localStorage.getItem("clientes") == null){

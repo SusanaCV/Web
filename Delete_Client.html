@@ -1,25 +1,51 @@
 </html>
 <!DOCTYPE html>
 <head>
-<meta charset="utf-8" />
-<title>Chamberos.Net-Delete Client</title>
-<link rel="stylesheet" href="StyleDeleteClient.css" type="text/css" />
+  <meta charset="utf-8" />
+  <title>Chamberos.Net-Delete Client</title>
+  <link rel="stylesheet" href="StyleDeleteClient.css" type="text/css" />
 </head>
-<body>
-    <a href="Login.html"><img class = 'img3' src="http://guide.eu5.org/images/icono-leer-circulo-cultura-biblioteca.png"></a>
-    <h1 class = 'h3' >Susana</h1>
-     <h1 class = 'delete' >DELETE CLIENT</h1>
-     <a href="Client_Administration.html"><input class = 'BTN' type="submit" name="REGRESAR" value = "REGRESAR"></a>
-    <img class = 'imgDelete' src="http://guide.eu5.org/images/remove_male_user_98400.jpg">
-<div id="menu">
+<body onLoad="cargar()">
+  <a href="Login.html"><img class = 'img3' src="http://guide.eu5.org/images/icono-leer-circulo-cultura-biblioteca.png"></a>
+  <h1 class = 'h3' >Susana</h1>
+  <h1 class = 'delete' >DELETE CLIENT</h1>
+  <a href="Client_Administration.html"><input class = 'BTN' type="submit" name="REGRESAR" value = "REGRESAR"></a>
+  <img class = 'imgDelete' src="http://guide.eu5.org/images/remove_male_user_98400.jpg">
+  <div id="menu">
     <a href="Client_Administration.html"><menu class = color><center>CLIENT</center></menu></a>
     <a href="Chambas.html"><menu><center>CHAMBAS</center></menu></a>
     <a href="Invoices.html"><menu><center>INVOICES</center></menu></a>
-</div>
-<div class = 'centrar'>
-	<p>Are you sure you want to delete the client?</p>
-     <a href="Client_Administration.html"><input class = 'NO' type="submit" name="NO" value = "NO"></a>
-     <a href="DeleteClient2.html"><input class = 'YES' type="submit" name="YES" value = "YES"></a>
+  </div>
+  <div class = 'centrar'>
+   <p>Are you sure you want to delete the client <select id="eliminar" name="eliminar">Clientes</option></select>?</p>
+   <a href="Client_Administration.html"><input class = 'NO' type="submit" name="NO" value = "NO"></a>
+   <a href="Client_Administration.html"><input class = 'YES' type="submit" name="YES" value = "YES" onclick="Eliminar();"></a>
+
+   <script type="text/javascript">
+function cargar()
+{
+  var select = document.getElementById("eliminar");
+  var clientes=JSON.parse(localStorage.getItem("clientes"));
+  for(var index = 0; index < clientes.length; index++) {
+    select.options[select.options.length] = new Option(clientes[index].nombre);
+  };
+}
+function Eliminar()
+{
+/* Para obtener el valor */
+var cod = document.getElementById("eliminar").value;
+  var clientes=JSON.parse(localStorage.getItem("clientes"));
+for (var i = 0; i <= clientes.length; i++) {
+  var cl = clientes[i].nombre;
+        if (cl==cod) {
+          delete clientes[i];
+        localStorage.setItem("clientes",JSON.stringify(clientes)); 
+        alert("Datos Guardados en LocalStorage");
+        }
+      }
+}
+
+</script>
 </div>
 </body>
 </html>

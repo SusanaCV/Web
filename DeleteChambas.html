@@ -5,7 +5,7 @@
 <title>Chamberos.Net-Delete Chambas</title>
 <link rel="stylesheet" href="StyleDeleteChambas.css" type="text/css" />
 </head>
-<body>
+<body onLoad="cargar()">
     <a href="Login.html"><img class = 'img3' src="http://guide.eu5.org/images/icono-leer-circulo-cultura-biblioteca.png"></a>
     <h1 class = 'h3' >Susana</h1>
      <h1 class = 'delete' >DELETE CHAMBAS</h1>
@@ -17,9 +17,34 @@
     <a href="Invoices.html"><menu><center>INVOICES</center></menu></a>
 </div>
 <div class = 'centrar'>
-	<p>Are you sure you want to delete the chamba?</p>
+	<p>Are you sure you want to delete the chamba <select id="eliminar" name="eliminar">Clientes</option></select>?</p>
     <a href="Chambas.html"><input class = 'NO' type="submit" name="NO" value = "NO"></a>
-     <a href="DeleteChambas2.html"><input class = 'YES' type="submit" name="YES" value = "YES"></a>
+     <a href="Chambas.html"><input class = 'YES' type="submit" name="YES" value = "YES" onclick="Eliminar();"></a>
+      <script type="text/javascript">
+function cargar()
+{
+  var select = document.getElementById("eliminar");
+  var chambas=JSON.parse(localStorage.getItem("chambas"));
+  for(var index = 0; index < chambas.length; index++) {
+    select.options[select.options.length] = new Option(chambas[index].cliente);
+  };
+}
+function Eliminar()
+{
+/* Para obtener el valor */
+var cod = document.getElementById("eliminar").value;
+  var chambas=JSON.parse(localStorage.getItem("chambas"));
+for (var i = 0; i <= chambas.length; i++) {
+  var cl = chambas[i].cliente;
+        if (cl==cod) {
+          delete chambas[i];
+        localStorage.setItem("chambas",JSON.stringify(chambas)); 
+        alert("Datos Guardados en LocalStorage");
+        }
+      }
+}
+
+</script>
 </div>
 </body>
 </html>

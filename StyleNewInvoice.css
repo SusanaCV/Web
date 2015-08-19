@@ -57,7 +57,14 @@ menu:hover{
 	margin-top:-150px;
 	padding:5px;
 	border-radius:15px}
-
+.invoice{
+	width: 150%;
+	position:absolute;
+	top:19%;
+	left:-12%;
+	margin-left:-110px;
+	margin-top:0;
+	padding:5px}
 .cliente{
 	width: 150%;
 	position:absolute;
@@ -69,7 +76,7 @@ menu:hover{
 .descripcion{
 	width: 150%;
 	position:absolute;
-	top:48%;
+	top:49%;
 	left:-12%;
 	margin-left:-110px;
 	margin-top:0;
@@ -122,6 +129,13 @@ menu:hover{
 	margin-top:-20px;
 	padding:10px}
 					
+.t{
+	position:absolute;
+	top:%;
+	left:-4%;
+	margin-left:-147px;
+	margin-top:60px;
+	padding:5px}					
 .t1{
 	position:absolute;
 	top:%;

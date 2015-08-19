@@ -5,7 +5,7 @@
 <title>Chamberos.Net-Delete Invoice</title>
 <link rel="stylesheet" href="StyleDeleteInvoice.css" type="text/css" />
 </head>
-<body>
+<body onLoad="cargar()">
     <a href="Login.html"><img class = 'img3' src="http://guide.eu5.org/images/icono-leer-circulo-cultura-biblioteca.png"></a>
     <h1 class = 'h3' >Susana</h1>
      <h1 class = 'delete' >DELETE INVOICE</h1>
@@ -17,9 +17,35 @@
     <a href="Invoices.html"><menu class = color><center>INVOICES</center></menu></a>
 </div>
 <div class = 'centrar'>
-	<p>Are you sure you want to delete the invoice?</p>
+	<p>Are you sure you want to delete the invoice <select id="eliminar" name="eliminar">Clientes</option></select>?</p>
     <a href="Invoices.html"><input class = 'NO' type="submit" name="NO" value = "NO"></a>
-     <a href="deleteInvoices2.html"><input class = 'YES' type="submit" name="YES" value = "YES"></a>
+     <a href="Invoices.html"><input class = 'YES' type="submit" name="YES" value = "YES" onclick="Eliminar();"></a>
+      <script type="text/javascript">
+function cargar()
+{
+  var select = document.getElementById("eliminar");
+  var invoices=JSON.parse(localStorage.getItem("invoices"));
+  for(var index = 0; index < invoices.length; index++) {
+    select.options[select.options.length] = new Option(invoices[index].cliente);
+  };
+}
+function Eliminar()
+{
+/* Para obtener el valor */
+var cod = document.getElementById("eliminar").value;
+  var invoices=JSON.parse(localStorage.getItem("invoices"));
+for (var i = 0; i <= invoices.length; i++) {
+  var cl = invoices[i].cliente;
+        if (cl==cod) {
+          delete invoices[i];
+          localStorage.removeItem("invoices",JSON.stringify(invoices));
+        localStorage.setItem("invoices",JSON.stringify(invoices)); 
+        alert("Datos Guardados en LocalStorage");
+        }
+      }
+}
+
+</script>
 </div>
 </body>
 </html>
