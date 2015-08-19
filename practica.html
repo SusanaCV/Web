@@ -1,20 +1,23 @@
-<html>
-<head>
-  <script type="text/javascript">
-  function cargar()
-  {
-var select = document.getElementById("lista");
-var clientes=JSON.parse(localStorage.getItem("clientes"));
-for(var index = 0; index < clientes.length; index++) {
-    select.options[select.options.length] = new Option(clientes[index].nombre);
-}
+<HTML>
+<HEAD></HEAD>
+<BODY>
+<select id="producto" onchange="ShowSelected();" name="producto">
+<option value="12">Texto One</option>
+<option value="13">Texto Two</option>
+</select>
+
+<script type="text/javascript">
+function ShowSelected()
+{
+/* Para obtener el valor */
+var cod = document.getElementById("producto").value;
+alert(cod);
+ 
+/* Para obtener el texto */
+var combo = document.getElementById("producto");
+var selected = combo.options[combo.selectedIndex].text;
+alert(selected);
 }
 </script>
-</head>
-<body onLoad="cargar()">
-  <form>
-    <select id="lista">
-    </select>
-  </form>
 </body>
-</html> 
+</html>
